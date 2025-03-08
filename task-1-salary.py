@@ -15,9 +15,8 @@ def total_salary():
 
             salary_list = file.readlines() # read the strings of salary in the file
             salary_list = [item.strip() for item in salary_list] # remove '/n' in each lines
-
         
-            #new_salary_list = list()
+          
             for i in range(len(salary_list)):
 
                 salary_list[i] = salary_list[i].split(',') # split the name of worker and salary
@@ -41,10 +40,6 @@ def total_salary():
     except ValueError:
         print("Salary isn't a number")
     
-
-
-if __name__ == "__main__":
-    print(type(total_salary()))
 
 
 
