@@ -12,31 +12,18 @@ def get_cats_info(path):
         
             for i in range(len(cats_list)):
 
-                cats_list[i] = cats_list[i].split(',')
+                cats_list[i] = cats_list[i].split(',') # split the cats data of worker and salary
               
-                cats_dict = {"id": None, "Name": None, "age": None}
+                cats_dict = {"id": None, "Name": None, "age": None} # create dict for each cat
 
-                if len(cats_dict.keys()) == len(cats_list[i]):
+                if len(cats_dict.keys()) == len(cats_list[i]): # check if len dict and len list equal
                     for key, j in zip(cats_dict.keys(), range(len(cats_list[i]))):
                  
-                        cats_dict[key] = str(cats_list[i][j])
+                        cats_dict[key] = str(cats_list[i][j]) # convert cats data into the dict
 
-                cats_list[i] = cats_dict
-                                       
-            return cats_list
-                    
-
-
-
-
+                cats_list[i] = cats_dict # add cats dict into the list
+                      
+            return cats_list     
 
     except FileNotFoundError:
-        print("File not found")
-
-
-if __name__ == "__main__":
-    dir = Path(__file__).parent 
-    cats_file = Path(dir / "cats.txt") #get the path of file with cats
-
-    print(get_cats_info(cats_file))
-        
+        print("File not found")     
