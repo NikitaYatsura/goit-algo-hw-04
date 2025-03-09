@@ -23,7 +23,7 @@ def total_salary():
               
                 # convert the list of worker and salry into the 'dict' 
                 # where 'key' is the Name of worker 'value' is his salary
-                salary_dict[salary_list[i][0]] = int(salary_list[i][1]) 
+                salary_dict[salary_list[i][0]] = float(salary_list[i][1])
 
              
             # calculate the sum of the salary of all workers
@@ -39,7 +39,10 @@ def total_salary():
         print("File not found")
     except ValueError:
         print("Salary isn't a number")
+    except ZeroDivisionError:
+        print("Zero division")
     
+
 
 
 
