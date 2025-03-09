@@ -102,7 +102,7 @@ def main():
 
 
     elif  start_bot == "bay": # check if input coomand is matches to command which close bot
-        print("Good bay")
+        print("Good bye")
 
 
     else: # if command doesn't matches any value
