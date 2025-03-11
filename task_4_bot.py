@@ -1,8 +1,6 @@
-import re
-
 # func for input
-def parse_input():
-    return input("How can I help you? ").lower().split() 
+def parse_input(input_str):
+    return input_str.lower().split() 
 
 #func for add the contact to the dict
 def add_contact(data, contacts_dict):
@@ -33,9 +31,8 @@ def show_phone(data, contacts_dict):
         return (f"phone: {contacts_dict[data[0]]}")
 
 # func for display all strings in dict
-def show_all(contacts_dict):
-    for k, v in contacts_dict.items():
-        return (f"{k}: {v}")
+def show_all(k, v):
+    return (f"{k}: {v}")
 
 
 def main():
@@ -44,7 +41,8 @@ def main():
     try:    
         while True:
             
-            command, *args = parse_input()
+            input_str = input("How can I help you? ")
+            command, *args = parse_input(input_str)
 
             if command in ["close", "exit"]:
                 print("Good bye!")
@@ -56,9 +54,10 @@ def main():
             elif command == "change":
                 print(change_contact(args, contacts))
             elif command == "phone":
-                print(add_contact(args, contacts))
+                print(show_phone(args, contacts))
             elif command == "show":
-                print(show_all(contacts))
+                for k, v in contacts.items():
+                    print(show_all(k, v))
             else:
                 print("Invalid command.")
 
