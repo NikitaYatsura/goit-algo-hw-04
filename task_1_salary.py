@@ -1,10 +1,7 @@
 from pathlib import Path
 
-def total_salary():
-
-    dir = Path(__file__).parent #get the path of current folder run script
-    salary_file = Path(dir / "salary.txt") #get the path of file with salary
-
+def total_salary(salary_file):
+    
     # create variable for total money and dictionary of salary list
     total_money = 0
     salary_dict = dict()
@@ -41,7 +38,7 @@ def total_salary():
         print("Salary isn't a number")
     except ZeroDivisionError:
         print("Zero division")
-    
+
 
 
 
