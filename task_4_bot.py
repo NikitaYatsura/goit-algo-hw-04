@@ -31,8 +31,10 @@ def show_phone(data, contacts_dict):
         return (f"phone: {contacts_dict[data[0]]}")
 
 # func for display all strings in dict
-def show_all(k, v):
-    return (f"{k}: {v}")
+def show_all(contacts_dir, str = ""):
+    for k, v in contacts_dir.items():
+        str += f"{k}:{v} \n"
+    return str
 
 
 def main():
@@ -56,8 +58,7 @@ def main():
             elif command == "phone":
                 print(show_phone(args, contacts))
             elif command == "show":
-                for k, v in contacts.items():
-                    print(show_all(k, v))
+                print(show_all(contacts))
             else:
                 print("Invalid command.")
 
